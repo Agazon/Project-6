@@ -1,0 +1,17 @@
+  var arr = ['1', '2', '20', '25'];
+     
+	
+	function Array(array,c){
+		for(var i=0; i < array.length; i++){
+    		 array[i]= c() * array[i];
+		}	
+		return array;	
+	}
+	
+	
+  function f (){
+		return 2;
+	}
+	
+	var result = Array(arr,f);
+	alert(result);

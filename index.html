@@ -1,17 +1,14 @@
-  var arr = ['1', '2', '20', '25'];
+var arr = ['1', '2', '20', '25'];
      
 	
-	function Array(array,c){
-		for(var i=0; i < array.length; i++){
-    		 array[i]= c() * array[i];
-		}	
-		return array;	
-	}
-	
-	
-  function f (){
-		return 2;
-	}
-	
-	var result = Array(arr,f);
-	alert(result);
+	var mapFunction = function(array,fn){
+		var mapArray = [];
+		for (var i = 0; i < arr.length; i++) {
+			mapArray.push(fn(array[i]));
+		}
+		return mapArray;
+	};
+	var cube = function(number) {
+		return number ** 3;
+	};
+	console.log(mapFunction(arr,cube));
